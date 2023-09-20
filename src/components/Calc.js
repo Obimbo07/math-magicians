@@ -1,24 +1,5 @@
 import './Calc.css';
-import PropTypes from 'prop-types';
-
-function Button({
-  value, handleClick, className,
-}) {
-  return (
-    <button type="button" className={className} onClick={() => handleClick(value)}>{value}</button>
-  );
-}
-
-Button.propTypes = {
-  value: PropTypes.string.isRequired,
-  handleClick: PropTypes.func.isRequired,
-  // eslint-disable-next-line react/require-default-props
-  className: PropTypes.string,
-};
-
-function handleButtonClick(value) {
-  console.log(`Button ${value} clicked`);
-}
+import Button, { handleButtonClick } from './button';
 
 function Calculator() {
   return (
