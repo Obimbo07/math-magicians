@@ -1,46 +1,77 @@
-#Calcu-holder {
-  margin: 20vh 30vw auto;
+@import url('https://fonts.googleapis.com/css2?family=Crete+Round&family=Open+Sans:ital,wght@0,500;1,500&display=swap');
+
+:root {
+  --color-display: #858393;
+  --color-secondary: #e0e0e0;
+  --color-tertiary: #f4913e;
+  --color-white: #fff;
+  --transition: all 0.3s ease-in;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: sans-serif;
+  font-weight: 400;
   display: flex;
   flex-direction: column;
-  width: 80vw;
-}
-
-.ans-display {
-  display: flex;
   align-items: center;
-  justify-content: end;
-  background-color: rgb(141, 141, 141);
-  font-size: 2.2em;
-  color: whitesmoke;
-  padding-right: 20px;
-  height: 60px;
-  width: 460px;
+  justify-content: center;
 }
 
-.Calc-button {
-  height: 60px;
-  width: 120px;
-  background-color: rgb(224, 224, 224);
-  border: 1px solid rgb(184, 184, 184);
-  font-size: 1.3em;
+.container {
+  margin-top: 120px;
+  width: 200px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.sum {
+  padding: 20px;
+}
+
+.sum-display {
+  background-color: var(--color-display);
+  font-size: 20px;
+  color: var(--color-white);
+  display: flex;
+  justify-content: flex-end;
+  grid-column: 1/-1;
 }
 
 .zero-btn {
-  width: 240px;
-  background-color: rgb(224, 224, 224);
-  border: 1px solid rgb(184, 184, 184);
-  font-size: 1.3em;
+  grid-column: 1 / span 2;
 }
 
-.Calcu-operator {
-  background-color: rgb(255, 145, 0);
+.orange-btn,
+.white-btn {
+  padding: 25px 40px;
+  font-size: 20px;
+  border: none;
+  border-bottom: 2px solid var(--color-display);
+  border-right: 2px solid var(--color-display);
 }
 
-.Button-row {
-  display: flex;
-  flex-direction: row;
+.white-btn {
+  background-color: var(--color-secondary);
 }
 
-.operator-btn {
-  background-color: #ffa500;
+.orange-btn {
+  background-color: var(--color-tertiary);
 }

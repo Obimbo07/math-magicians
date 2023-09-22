@@ -10,43 +10,156 @@ function Calculator() {
   });
   const { total, operation, next } = value;
 
-  function handleClick(num) {
+  function clickHandler(num) {
     setValue(calculate(value, num));
   }
 
   return (
-    <div id="Calc-holder">
-      <div className="rowA ans-display">
-        <ButtonDisplay result={next || operation || total || '0'} />
-      </div>
-      <div className="rowB">
-        <button onClick={(e) => handleClick(e.target.textContent)} type="button" className="Calc-button">AC</button>
-        <button onClick={(e) => handleClick(e.target.textContent)} type="button" className="Calc-button">+/-</button>
-        <button onClick={(e) => handleClick(e.target.textContent)} type="button" className="Calc-button">%</button>
-        <button onClick={(e) => handleClick(e.target.textContent)} type="button" className="Calc-button operator-btn"> &#xf7; </button>
-      </div>
-      <div className="rowC">
-        <button onClick={(e) => handleClick(e.target.textContent)} type="button" className="Calc-button">7 </button>
-        <button onClick={(e) => handleClick(e.target.textContent)} type="button" className="Calc-button">8 </button>
-        <button onClick={(e) => handleClick(e.target.textContent)} type="button" className="Calc-button">9 </button>
-        <button onClick={(e) => handleClick(e.target.textContent)} type="button" className="Calc-button operator-btn">x</button>
-      </div>
-      <div className="rowD">
-        <button onClick={(e) => handleClick(e.target.textContent)} type="button" className="Calc-button">4 </button>
-        <button onClick={(e) => handleClick(e.target.textContent)} type="button" className="Calc-button">5</button>
-        <button onClick={(e) => handleClick(e.target.textContent)} type="button" className="Calc-button">6</button>
-        <button onClick={(e) => handleClick(e.target.textContent)} type="button" className="Calc-button operator-btn"> -</button>
-      </div>
-      <div className="rowE">
-        <button onClick={(e) => handleClick(e.target.textContent)} type="button" className="Calc-button">1</button>
-        <button onClick={(e) => handleClick(e.target.textContent)} type="button" className="Calc-button">2</button>
-        <button onClick={(e) => handleClick(e.target.textContent)} type="button" className="Calc-button">3</button>
-        <button onClick={(e) => handleClick(e.target.textContent)} type="button" className="Calc-button operator-btn">+</button>
-      </div>
-      <div className="rowF">
-        <button onClick={(e) => handleClick(e.target.textContent)} type="button" className="Calc-button zero-btn"> 0</button>
-        <button onClick={(e) => handleClick(e.target.textContent)} type="button" className="Calc-button">.</button>
-        <button onClick={(e) => handleClick(e.target.textContent)} type="button" className="Calc-button operator-btn"> = </button>
+    <div>
+      <div className="container">
+        <div className="sum-display sum">
+          <span>
+            <ButtonDisplay result={next || operation || total || '0'} />
+          </span>
+        </div>
+
+        <button
+          type="button"
+          className="white-btn"
+          onClick={(e) => clickHandler(e.target.textContent)}
+        >
+          AC
+        </button>
+        <button
+          type="button"
+          className="white-btn"
+          onClick={(e) => clickHandler(e.target.textContent)}
+        >
+          +/-
+        </button>
+        <button
+          type="button"
+          className="white-btn"
+          onClick={(e) => clickHandler(e.target.textContent)}
+        >
+          %
+        </button>
+        <button
+          type="button"
+          className="orange-btn"
+          onClick={(e) => clickHandler(e.target.textContent)}
+        >
+          &#xf7;
+        </button>
+
+        <button
+          type="button"
+          className="white-btn"
+          onClick={(e) => clickHandler(e.target.textContent)}
+        >
+          7
+        </button>
+        <button
+          type="button"
+          className="white-btn"
+          onClick={(e) => clickHandler(e.target.textContent)}
+        >
+          8
+        </button>
+        <button
+          type="button"
+          className="white-btn"
+          onClick={(e) => clickHandler(e.target.textContent)}
+        >
+          9
+        </button>
+        <button
+          type="button"
+          className="orange-btn"
+          onClick={(e) => clickHandler(e.target.textContent)}
+        >
+          x
+        </button>
+
+        <button
+          type="button"
+          className="white-btn"
+          onClick={(e) => clickHandler(e.target.textContent)}
+        >
+          4
+        </button>
+        <button
+          type="button"
+          className="white-btn"
+          onClick={(e) => clickHandler(e.target.textContent)}
+        >
+          5
+        </button>
+        <button
+          type="button"
+          className="white-btn"
+          onClick={(e) => clickHandler(e.target.textContent)}
+        >
+          6
+        </button>
+        <button
+          type="button"
+          className="orange-btn"
+          onClick={(e) => clickHandler(e.target.textContent)}
+        >
+          -
+        </button>
+
+        <button
+          type="button"
+          className="white-btn"
+          onClick={(e) => clickHandler(e.target.textContent)}
+        >
+          1
+        </button>
+        <button
+          type="button"
+          className="white-btn"
+          onClick={(e) => clickHandler(e.target.textContent)}
+        >
+          2
+        </button>
+        <button
+          type="button"
+          className="white-btn"
+          onClick={(e) => clickHandler(e.target.textContent)}
+        >
+          3
+        </button>
+        <button
+          type="button"
+          className="orange-btn"
+          onClick={(e) => clickHandler(e.target.textContent)}
+        >
+          +
+        </button>
+
+        <button
+          type="button"
+          className="white-btn zero-btn"
+          onClick={(e) => clickHandler(e.target.textContent)}
+        >
+          0
+        </button>
+        <button
+          type="button"
+          className="white-btn"
+          onClick={(e) => clickHandler(e.target.textContent)}
+        >
+          .
+        </button>
+        <button
+          type="button"
+          className="orange-btn"
+          onClick={(e) => clickHandler(e.target.textContent)}
+        >
+          =
+        </button>
       </div>
     </div>
   );

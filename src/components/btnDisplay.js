@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function ButtonDisplay({ result }) {
-  console.log(result);
   return <div>{result}</div>;
 }
 
