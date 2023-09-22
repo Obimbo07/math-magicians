@@ -1,38 +1,52 @@
-import './Calc.css';
-import Button, { handleButtonClick } from './button';
+import React, { useState } from 'react';
+import calculate from '../logic/calculate';
+import ButtonDisplay from './btnDisplay';
 
 function Calculator() {
+  const [value, setValue] = useState({
+    total: '0',
+    next: null,
+    operation: null,
+  });
+  const { total, operation, next } = value;
+
+  function handleClick(num) {
+    setValue(calculate(value, num));
+  }
+
   return (
     <div id="Calc-holder">
-      <div className="rowA ans-display">123</div>
+      <div className="rowA ans-display">
+        <ButtonDisplay result={next || operation || total || '0'} />
+      </div>
       <div className="rowB">
-        <Button value="AC" type="button" handleClick={handleButtonClick} className="Calc-button" />
-        <Button value="+/-" type="button" handleClick={handleButtonClick} className="Calc-button" />
-        <Button value="%" type="button" handleClick={handleButtonClick} className="Calc-button" />
-        <Button value="+" type="button" handleClick={handleButtonClick} className="Calc-button operator-btn" />
+        <button onClick={(e) => handleClick(e.target.textContent)} type="button" className="Calc-button">AC</button>
+        <button onClick={(e) => handleClick(e.target.textContent)} type="button" className="Calc-button">+/-</button>
+        <button onClick={(e) => handleClick(e.target.textContent)} type="button" className="Calc-button">%</button>
+        <button onClick={(e) => handleClick(e.target.textContent)} type="button" className="Calc-button operator-btn"> &#xf7; </button>
       </div>
       <div className="rowC">
-        <Button value="7" type="button" handleClick={handleButtonClick} className="Calc-button" />
-        <Button value="8" type="button" handleClick={handleButtonClick} className="Calc-button" />
-        <Button value="9" type="button" handleClick={handleButtonClick} className="Calc-button" />
-        <Button value="x" type="button" handleClick={handleButtonClick} className="Calc-button operator-btn" />
+        <button onClick={(e) => handleClick(e.target.textContent)} type="button" className="Calc-button">7 </button>
+        <button onClick={(e) => handleClick(e.target.textContent)} type="button" className="Calc-button">8 </button>
+        <button onClick={(e) => handleClick(e.target.textContent)} type="button" className="Calc-button">9 </button>
+        <button onClick={(e) => handleClick(e.target.textContent)} type="button" className="Calc-button operator-btn">x</button>
       </div>
       <div className="rowD">
-        <Button value="4" type="button" handleClick={handleButtonClick} className="Calc-button" />
-        <Button value="5" type="button" handleClick={handleButtonClick} className="Calc-button" />
-        <Button value="6" type="button" handleClick={handleButtonClick} className="Calc-button" />
-        <Button value="-" type="button" handleClick={handleButtonClick} className="Calc-button operator-btn" />
+        <button onClick={(e) => handleClick(e.target.textContent)} type="button" className="Calc-button">4 </button>
+        <button onClick={(e) => handleClick(e.target.textContent)} type="button" className="Calc-button">5</button>
+        <button onClick={(e) => handleClick(e.target.textContent)} type="button" className="Calc-button">6</button>
+        <button onClick={(e) => handleClick(e.target.textContent)} type="button" className="Calc-button operator-btn"> -</button>
       </div>
       <div className="rowE">
-        <Button value="1" type="button" handleClick={handleButtonClick} className="Calc-button" />
-        <Button value="2" type="button" handleClick={handleButtonClick} className="Calc-button" />
-        <Button value="3" type="button" handleClick={handleButtonClick} className="Calc-button" />
-        <Button value="+" type="button" handleClick={handleButtonClick} className="Calc-button operator-btn" />
+        <button onClick={(e) => handleClick(e.target.textContent)} type="button" className="Calc-button">1</button>
+        <button onClick={(e) => handleClick(e.target.textContent)} type="button" className="Calc-button">2</button>
+        <button onClick={(e) => handleClick(e.target.textContent)} type="button" className="Calc-button">3</button>
+        <button onClick={(e) => handleClick(e.target.textContent)} type="button" className="Calc-button operator-btn">+</button>
       </div>
       <div className="rowF">
-        <Button value="0" type="button" handleClick={handleButtonClick} className="Calc-button zero-btn" />
-        <Button value="." type="button" handleClick={handleButtonClick} className="Calc-button" />
-        <Button value="=" type="button" handleClick={handleButtonClick} className="Calc-button operator-btn" />
+        <button onClick={(e) => handleClick(e.target.textContent)} type="button" className="Calc-button zero-btn"> 0</button>
+        <button onClick={(e) => handleClick(e.target.textContent)} type="button" className="Calc-button">.</button>
+        <button onClick={(e) => handleClick(e.target.textContent)} type="button" className="Calc-button operator-btn"> = </button>
       </div>
     </div>
   );
