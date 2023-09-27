@@ -15,7 +15,10 @@ function Calculator() {
   }
 
   return (
-    <div>
+    <div className="calc-sctn">
+      <div className="math-title">
+        <h1>Lets do some Math</h1>
+      </div>
       <div className="container">
         <div className="sum-display sum">
           <span>

@@ -32,21 +32,23 @@ function Quote() {
   }, []);
   return (
     <>
-      {isError && <h1>Something went wrong! Try again</h1>}
-      {isLoading ? (
-        <h3 className="quote">Loading...</h3>
-      ) : (
-        <ul className="quote">
-          {quote.map((q) => {
-            const { quote } = q;
-            return (
-              <li key={quote} className="list-quote">
-                {quote}
-              </li>
-            );
-          })}
-        </ul>
-      )}
+      <div className="quote-container">
+        {isError && <h1>Something went wrong! Try again</h1>}
+        {isLoading ? (
+          <h3 className="quote">Loading...</h3>
+        ) : (
+          <ul className="quote">
+            {quote.map((q) => {
+              const { quote } = q;
+              return (
+                <li key={quote} className="list-quote">
+                  {quote}
+                </li>
+              );
+            })}
+          </ul>
+        )}
+      </div>
     </>
   );
 }
