@@ -85,10 +85,12 @@ body {
 .quote-list {
   font-size: 2rem;
 }
+
 a {
   color: #333;
   text-decoration: none;
 }
+
 /* Active route */
 .active {
   color: #005bb3;
